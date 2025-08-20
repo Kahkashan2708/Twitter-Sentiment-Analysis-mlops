@@ -1,0 +1,27 @@
+stages:
+  ingest:
+    cmd: python src/data/data_ingestion.py
+    deps:
+      - src/data/data_ingestion.py
+    outs:
+      - data/raw/raw_data.csv
+
+  preprocess:
+    cmd: python src/data/preprocessing.py
+    deps:
+      - src/data/preprocessing.py
+      - data/raw/raw_data.csv
+    outs:
+      - data/processed/features.npy
+      - data/processed/labels.npy
+      - data/processed/tokenizer.pkl
+      - data/processed/label_encoder.pkl
+      - data/processed/processed_data.csv
+
+  train_model:
+    cmd: python src/models/train.py
+    deps:
+      - src/models/train.py
+      - data/processed/processed_data.csv
+    outs:
+      - data/processed/svm_model.pkl
