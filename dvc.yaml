@@ -1,0 +1,30 @@
+stages:
+  preprocess:
+    cmd: python src/data/preprocessed.py
+    deps:
+      - data/raw/tweets.csv
+      - src/data/preprocessed.py
+    params:
+      - data_preprocessing.input_file
+      - data_preprocessing.output_file
+      - data_preprocessing.stopwords_lang
+    outs:
+      - data/processed/clean_tweets.csv
+
+  feature_engineering:
+    cmd: python src/features/feature_engineering.py
+    deps:
+      - data/processed/clean_tweets.csv
+      - src/features/feature_engineering.py
+    params:
+      - feature_engineering.input_file
+      - feature_engineering.output_dir
+      - feature_engineering.max_features
+      - feature_engineering.ngram_range
+      - feature_engineering.min_df
+      - feature_engineering.max_df
+    outs:
+      - data/processed/features.pkl
+      - data/processed/labels.pkl
+      - data/processed/vectorizer.pkl
+

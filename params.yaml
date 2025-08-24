@@ -1,0 +1,12 @@
+data_preprocessing:
+  input_file: "data/raw/tweets.csv"
+  output_file: "data/processed/clean_tweets.csv"
+  stopwords_lang: "english"
+
+feature_engineering:
+  input_file: "data/processed/clean_tweets.csv"
+  output_dir: "data/processed"
+  max_features: 10000
+  ngram_range: [1, 2]
+  min_df: 2
+  max_df: 0.95

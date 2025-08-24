@@ -1,0 +1,57 @@
+schema: '2.0'
+stages:
+  preprocess:
+    cmd: python src/data/preprocessed.py
+    deps:
+    - path: data/raw/tweets.csv
+      hash: md5
+      md5: df952449d6f9b5f9fdfe3fc53ddef7ca
+      size: 238803811
+    - path: src/data/preprocessed.py
+      hash: md5
+      md5: 83706d2b0530660030724b7e6bf62d4f
+      size: 2288
+    params:
+      params.yaml:
+        data_preprocessing.input_file: data/raw/tweets.csv
+        data_preprocessing.output_file: data/processed/clean_tweets.csv
+        data_preprocessing.stopwords_lang: english
+    outs:
+    - path: data/processed/clean_tweets.csv
+      hash: md5
+      md5: 6abd3d00b936b479b9e76e62e44bac17
+      size: 66852668
+  feature_engineering:
+    cmd: python src/features/feature_engineering.py
+    deps:
+    - path: data/processed/clean_tweets.csv
+      hash: md5
+      md5: 6abd3d00b936b479b9e76e62e44bac17
+      size: 66852668
+    - path: src/features/feature_engineering.py
+      hash: md5
+      md5: e8997f3b25d9abf2c161263ecf2b174e
+      size: 1318
+    params:
+      params.yaml:
+        feature_engineering.input_file: data/processed/clean_tweets.csv
+        feature_engineering.max_df: 0.95
+        feature_engineering.max_features: 10000
+        feature_engineering.min_df: 2
+        feature_engineering.ngram_range:
+        - 1
+        - 2
+        feature_engineering.output_dir: data/processed
+    outs:
+    - path: data/processed/features.pkl
+      hash: md5
+      md5: a2145943af49329e915217b6a5dc9b8c
+      size: 136614436
+    - path: data/processed/labels.pkl
+      hash: md5
+      md5: 4d64fd2a999d5e5513003fbbf2d64d45
+      size: 38163086
+    - path: data/processed/vectorizer.pkl
+      hash: md5
+      md5: 5dc0900398821200ee490d6aaf91a765
+      size: 373093
