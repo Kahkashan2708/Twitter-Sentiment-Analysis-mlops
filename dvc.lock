@@ -55,3 +55,55 @@ stages:
       hash: md5
       md5: 5dc0900398821200ee490d6aaf91a765
       size: 373093
+  train:
+    cmd: python src/models/train.py
+    deps:
+    - path: data/processed/features.pkl
+      hash: md5
+      md5: a2145943af49329e915217b6a5dc9b8c
+      size: 136614436
+    - path: data/processed/labels.pkl
+      hash: md5
+      md5: 4d64fd2a999d5e5513003fbbf2d64d45
+      size: 38163086
+    - path: src/models/train.py
+      hash: md5
+      md5: ece1a10f5c9a2a3f2f89177362990fe1
+      size: 2490
+    outs:
+    - path: models/lightgbm.pkl
+      hash: md5
+      md5: 5fc4e611ed9a63966c635005fec39f36
+      size: 2193098
+    - path: models/logisticregression.pkl
+      hash: md5
+      md5: 85cd0d0894e3e29cc5b75a472ae1ce50
+      size: 80731
+  evaluate:
+    cmd: python src/models/evaluate.py
+    deps:
+    - path: data/processed/features.pkl
+      hash: md5
+      md5: a2145943af49329e915217b6a5dc9b8c
+      size: 136614436
+    - path: data/processed/labels.pkl
+      hash: md5
+      md5: 4d64fd2a999d5e5513003fbbf2d64d45
+      size: 38163086
+    - path: models/lightgbm.pkl
+      hash: md5
+      md5: 5fc4e611ed9a63966c635005fec39f36
+      size: 2193098
+    - path: models/logisticregression.pkl
+      hash: md5
+      md5: 85cd0d0894e3e29cc5b75a472ae1ce50
+      size: 80731
+    - path: src/models/evaluate.py
+      hash: md5
+      md5: f66822272c20b58b1a78c0f04aaed92d
+      size: 2646
+    outs:
+    - path: metrics.json
+      hash: md5
+      md5: 872384848d2cf79481c653e814f4b09f
+      size: 626
