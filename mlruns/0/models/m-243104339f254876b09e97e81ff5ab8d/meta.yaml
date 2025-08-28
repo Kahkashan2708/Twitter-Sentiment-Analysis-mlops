@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/lenovo/OneDrive/Documents/Git%20Hub/Twitter-Sentiment-Analysis-mlops/mlruns/0/models/m-243104339f254876b09e97e81ff5ab8d/artifacts
+creation_timestamp: 1756101214961
+experiment_id: '0'
+last_updated_timestamp: 1756101237657
+model_id: m-243104339f254876b09e97e81ff5ab8d
+model_type: null
+name: model
+source_run_id: b9da4f7bd6bb480b931925aa6fe0f3e6
+status: 2
+status_message: null

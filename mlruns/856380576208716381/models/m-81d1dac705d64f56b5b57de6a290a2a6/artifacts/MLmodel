@@ -1,0 +1,31 @@
+artifact_path: file:///C:/Users/lenovo/OneDrive/Documents/Git%20Hub/Twitter-Sentiment-Analysis-mlops/mlruns/856380576208716381/models/m-81d1dac705d64f56b5b57de6a290a2a6/artifacts
+flavors:
+  lightgbm:
+    code: null
+    data: model.pkl
+    lgb_version: 4.6.0
+    model_class: lightgbm.sklearn.LGBMClassifier
+  python_function:
+    data: model.pkl
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.lightgbm
+    python_version: 3.13.5
+is_signature_from_type_hint: false
+mlflow_version: 3.3.1
+model_id: m-81d1dac705d64f56b5b57de6a290a2a6
+model_size_bytes: 2794562
+model_uuid: m-81d1dac705d64f56b5b57de6a290a2a6
+prompts: null
+run_id: 5d3624b4249a48f5806f703522637825
+saved_input_example_info:
+  artifact_path: input_example.json
+  serving_input_path: serving_input_example.json
+  type: sparse_matrix_csr
+signature:
+  inputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1, 10000]}}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-08-26 08:32:45.392253'

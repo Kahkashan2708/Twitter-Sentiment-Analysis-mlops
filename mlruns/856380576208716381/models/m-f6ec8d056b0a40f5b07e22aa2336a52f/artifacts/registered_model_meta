@@ -1,0 +1,2 @@
+model_name: twitter-sentiment-logreg
+model_version: '1'

@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/lenovo/OneDrive/Documents/Git%20Hub/Twitter-Sentiment-Analysis-mlops/mlruns/0/75e42e4995344a5796ca7ef0b0341bea/artifacts
+end_time: 1756101630366
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 75e42e4995344a5796ca7ef0b0341bea
+run_name: LogisticRegression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756101605784
+status: 3
+tags: []
+user_id: lenovo

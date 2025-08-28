@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  train:
+    build:
+      context: .
+      dockerfile: Dockerfile.train
+    image: twitter-train
+    container_name: twitter_train
+    volumes:
+      - ./models:/app/models
+      - ./data:/app/data
+    restart: "no"
+    networks:
+      - mlops-network
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: twitter-api
+    container_name: twitter_api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models
+    depends_on:
+      - train
+    networks:
+      - mlops-network
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    networks:
+      - mlops-network
+
+networks:
+  mlops-network:
+    driver: bridge
+
+
+

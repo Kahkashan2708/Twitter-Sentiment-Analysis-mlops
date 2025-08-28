@@ -4,10 +4,6 @@ stages:
     deps:
       - data/raw/tweets.csv
       - src/data/preprocessed.py
-    params:
-      - data_preprocessing.input_file
-      - data_preprocessing.output_file
-      - data_preprocessing.stopwords_lang
     outs:
       - data/processed/clean_tweets.csv
 
@@ -16,15 +12,27 @@ stages:
     deps:
       - data/processed/clean_tweets.csv
       - src/features/feature_engineering.py
-    params:
-      - feature_engineering.input_file
-      - feature_engineering.output_dir
-      - feature_engineering.max_features
-      - feature_engineering.ngram_range
-      - feature_engineering.min_df
-      - feature_engineering.max_df
     outs:
       - data/processed/features.pkl
       - data/processed/labels.pkl
-      - data/processed/vectorizer.pkl
 
+  train:
+    cmd: python src/models/train.py
+    deps:
+      - data/processed/features.pkl
+      - data/processed/labels.pkl
+      - src/models/train.py
+    outs:
+      - models/logisticregression.pkl
+      - models/lightgbm.pkl
+
+  evaluate:
+    cmd: python src/models/evaluate.py
+    deps:
+      - data/processed/features.pkl
+      - data/processed/labels.pkl
+      - models/logisticregression.pkl
+      - models/lightgbm.pkl
+      - src/models/evaluate.py
+    outs:
+      - metrics.json

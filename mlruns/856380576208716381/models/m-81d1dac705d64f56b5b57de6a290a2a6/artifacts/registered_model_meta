@@ -1,0 +1,2 @@
+model_name: twitter-sentiment-lgbm
+model_version: '1'

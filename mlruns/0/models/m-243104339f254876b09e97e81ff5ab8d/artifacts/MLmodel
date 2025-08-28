@@ -1,0 +1,22 @@
+artifact_path: file:///C:/Users/lenovo/OneDrive/Documents/Git%20Hub/Twitter-Sentiment-Analysis-mlops/mlruns/0/models/m-243104339f254876b09e97e81ff5ab8d/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.5
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.1
+mlflow_version: 3.3.1
+model_id: m-243104339f254876b09e97e81ff5ab8d
+model_size_bytes: 2193098
+model_uuid: m-243104339f254876b09e97e81ff5ab8d
+prompts: null
+run_id: b9da4f7bd6bb480b931925aa6fe0f3e6
+utc_time_created: '2025-08-25 05:53:35.305020'

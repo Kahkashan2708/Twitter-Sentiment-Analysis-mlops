@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/lenovo/OneDrive/Documents/Git%20Hub/Twitter-Sentiment-Analysis-mlops/mlruns/856380576208716381/5d3624b4249a48f5806f703522637825/artifacts
+end_time: 1756197197436
+entry_point_name: ''
+experiment_id: '856380576208716381'
+lifecycle_stage: active
+run_id: 5d3624b4249a48f5806f703522637825
+run_name: LightGBM
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756197163860
+status: 3
+tags: []
+user_id: lenovo

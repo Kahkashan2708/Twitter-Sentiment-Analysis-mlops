@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/lenovo/OneDrive/Documents/Git%20Hub/Twitter-Sentiment-Analysis-mlops/mlruns/856380576208716381/models/m-f6ec8d056b0a40f5b07e22aa2336a52f/artifacts
+creation_timestamp: 1756196258648
+experiment_id: '856380576208716381'
+last_updated_timestamp: 1756196290406
+model_id: m-f6ec8d056b0a40f5b07e22aa2336a52f
+model_type: null
+name: logreg_model
+source_run_id: d63bd568858746619a6e2a30c0ec3c94
+status: 2
+status_message: null

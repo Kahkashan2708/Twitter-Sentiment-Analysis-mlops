@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/lenovo/OneDrive/Documents/Git%20Hub/Twitter-Sentiment-Analysis-mlops/mlruns/856380576208716381/models/m-81d1dac705d64f56b5b57de6a290a2a6/artifacts
+creation_timestamp: 1756197165189
+experiment_id: '856380576208716381'
+last_updated_timestamp: 1756197197247
+model_id: m-81d1dac705d64f56b5b57de6a290a2a6
+model_type: null
+name: lgbm_model
+source_run_id: 5d3624b4249a48f5806f703522637825
+status: 2
+status_message: null
