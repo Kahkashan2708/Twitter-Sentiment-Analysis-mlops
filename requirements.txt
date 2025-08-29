@@ -8,3 +8,4 @@ numpy
 joblib
 prometheus-client
 
+# grafana
